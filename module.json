@@ -1,0 +1,27 @@
+{
+    "name": "additional-modifiers",
+    "title": "Additional Dice Modifiers",
+    "description": "Adds additional roll modifiers for Foundry VTT",
+    "version": "0.0.1",
+    "author": "DaiKnapz",
+    "authors": [
+      {
+        "name": "DaiKnapz",
+        "url": "https://github.com/DaiKnapz"
+      }
+    ],
+    "esmodules": [
+        "/scripts/additionalModifiers.js"
+    ],
+    "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      }
+    ],
+    "socket": true,
+    "url": "https://github.com/DaiKnapz/Additional-Roll-Modifiers",
+    "manifest": "https://github.com/DaiKnapz/Additional-Roll-Modifiers/main/module.json",
+    "minimumCoreVersion": "0.7.9"
+}
