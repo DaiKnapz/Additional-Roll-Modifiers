@@ -1,0 +1,67 @@
+{
+	"private": true,
+	"name": "additional-roll-modifiers",
+	"version": "0.0.1",
+	"description": "Adds additional roll modifiers for Foundry VTT",
+	"license": "Apache 2.0",
+	"homepage": "https://github.com/DaiKnapz/Additional-Roll-Modifiers",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DaiKnapz/Additional-Roll-Modifiers.git"
+	},
+	"bugs": {
+		"url": "https://github.com/DaiKnapz/Additional-Roll-Modifiers"
+	},
+	"contributors": [
+		{
+			"name": "David Knapman",
+			"email": "dai.knapz@gmail.com"
+		}
+	],
+	"scripts": {
+		"build": "gulp build",
+		"build:watch": "gulp watch",
+		"link-project": "gulp link",
+		"clean": "gulp clean",
+		"clean:link": "gulp link --clean",
+		"bump-version": "gulp bumpVersion",
+		"lint": "eslint --ext .ts,.js .",
+		"lint:fix": "eslint --ext .ts,.js --fix .",
+		"format": "prettier --write \"./**/*.(ts|js|json|scss)\"",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:ci": "jest --ci --reporters=default --reporters=jest-junit",
+		"postinstall": "husky install"
+	},
+	"devDependencies": {
+		"@league-of-foundry-developers/foundry-vtt-types": "^0.7.9-6",
+		"@rollup/plugin-node-resolve": "^13.0.0",
+		"@types/jest": "^26.0.23",
+		"@typescript-eslint/eslint-plugin": "^4.28.0",
+		"@typescript-eslint/parser": "^4.28.0",
+		"chalk": "^4.1.1",
+		"eslint": "^7.29.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-jest": "^24.3.6",
+		"eslint-plugin-prettier": "^3.4.0",
+		"fs-extra": "^10.0.0",
+		"gulp": "^4.0.2",
+		"gulp-dart-sass": "^1.0.2",
+		"husky": "^6.0.0",
+		"jest": "^27.0.5",
+		"jest-junit": "^12.2.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.1",
+		"rollup": "^2.52.2",
+		"rollup-plugin-typescript2": "^0.30.0",
+		"semver": "^7.3.5",
+		"ts-jest": "^27.0.3",
+		"tslib": "^2.3.0",
+		"typescript": "^4.3.4",
+		"yargs": "^17.0.1"
+	},
+	"lint-staged": {
+		"*.(ts|js)": "eslint --fix",
+		"*.(json|scss)": "prettier --write"
+	}
+}

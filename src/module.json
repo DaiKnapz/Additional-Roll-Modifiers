@@ -1,0 +1,31 @@
+{
+	"name": "Additional-Roll-Modifiers",
+	"title": "Additional-Roll-Modifiers",
+	"description": "Adds additional roll modifiers for Foundry VTT",
+	"version": "0.0.1",
+	"author": "David Knapman",
+	"authors": [
+		{
+			"name": "David Knapman",
+			"email": "dai.knapz@gmail.com"
+		}
+	],
+	"minimumCoreVersion": "0.7.9",
+	"scripts": [],
+	"esmodules": ["module/Additional-Roll-Modifiers.js"],
+	"styles": ["styles/Additional-Roll-Modifiers.css"],
+	"packs": [],
+	"dependencies": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"socket": false,
+	"url": "https://github.com/DaiKnapz/Additional-Roll-Modifiers",
+	"manifest": "https://github.com/DaiKnapz/Additional-Roll-Modifiers/src/module.json",
+	"download": "https://github.com/DaiKnapz/Additional-Roll-Modifiers/releases/download/0.0.1/module.zip",
+	"library": false
+}
