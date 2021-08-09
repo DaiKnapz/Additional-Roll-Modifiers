@@ -56,13 +56,13 @@ Hooks.on('init', () => {
 		const replaceValue = parseInt(matchSlice[2]);
 		const comparison = matchSlice[0];
 
-		// Replace any results that match the criteria
+		// Replace any results that match the comparison criteria
 		const n = this.results.length;
 		for (let i = 0; i < n; i++) {
 			const r = this.results[i];
 			if (DiceTerm.compareResult(r.result, comparison, target)) {
 				// r.replaced = true;
-				r.result = target;
+				r.result = replaceValue;
 			}
 		}
 	};
