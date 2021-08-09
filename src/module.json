@@ -11,6 +11,7 @@
 		}
 	],
 	"minimumCoreVersion": "0.7.9",
+	"compatibleCoreVersion": "0.8.7",
 	"scripts": [],
 	"esmodules": ["module/Additional-Roll-Modifiers.js"],
 	"styles": ["styles/Additional-Roll-Modifiers.css"],
