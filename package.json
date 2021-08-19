@@ -33,8 +33,14 @@
 		"test:ci": "jest --ci --reporters=default --reporters=jest-junit",
 		"postinstall": "husky install"
 	},
+	"dependencies": {
+		"@league-of-foundry-developers/foundry-vtt-types": "fvtt-0.8.8",
+		"gulp": "^4.0.2",
+		"lib-wrapper": "^1.0.4",
+		"prettier": "^2.3.1",
+		"typescript": "^4.3.4"
+	},
 	"devDependencies": {
-		"@league-of-foundry-developers/foundry-vtt-types": "^0.7.9-6",
 		"@rollup/plugin-node-resolve": "^13.0.0",
 		"@types/jest": "^26.0.23",
 		"@typescript-eslint/eslint-plugin": "^4.28.0",
@@ -45,19 +51,16 @@
 		"eslint-plugin-jest": "^24.3.6",
 		"eslint-plugin-prettier": "^3.4.0",
 		"fs-extra": "^10.0.0",
-		"gulp": "^4.0.2",
 		"gulp-dart-sass": "^1.0.2",
 		"husky": "^6.0.0",
 		"jest": "^27.0.5",
 		"jest-junit": "^12.2.0",
 		"lint-staged": "^11.0.0",
-		"prettier": "^2.3.1",
 		"rollup": "^2.52.2",
 		"rollup-plugin-typescript2": "^0.30.0",
 		"semver": "^7.3.5",
 		"ts-jest": "^27.0.3",
 		"tslib": "^2.3.0",
-		"typescript": "^4.3.4",
 		"yargs": "^17.0.1"
 	},
 	"lint-staged": {
