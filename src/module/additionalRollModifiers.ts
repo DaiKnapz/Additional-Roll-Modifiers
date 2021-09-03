@@ -10,11 +10,13 @@
 import { registerSettings } from './settings';
 import { libWrapper } from './libWrapper';
 import { AdditionalModifiersResult } from '../types/DiceTerm';
+import { MODULE_NAMESPACE } from '../types/Constants';
 
 // Initialize module
 Hooks.once('init', async () => {
-	console.log('Additional-Roll-Modifiers | Initializing Additional-Roll-Modifiers');
+	console.log(`${MODULE_NAMESPACE} | Initializing`);
 
+	registerSettings();
 
 	let modifiers: any = Die.MODIFIERS;
 
@@ -46,7 +48,7 @@ Hooks.once('init', async () => {
 		}
 	};
 
-	libWrapper!.register('Additional-Roll-Modifiers', 'DiceTerm.prototype.getResultCSS', function (wrapped: any, ...args: any[]) {
+	libWrapper!.register(MODULE_NAMESPACE, 'DiceTerm.prototype.getResultCSS', function (wrapped: any, ...args: any[]) {
 		let result = wrapped(...args);
 		
 		if (args[0].replaced) {
