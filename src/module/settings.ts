@@ -17,3 +17,11 @@ export function registerSettings(): void {
 		game.settings.register(MODULE_NAMESPACE, "ReplaceRoll", replaceRollSetting);
 	}
 }
+
+export function modifierEnabled(modifierName: string): boolean {
+	return true;
+}
+
+export function anyModifiersEnabled(): boolean {
+	return true;
+}
