@@ -1,0 +1,1 @@
+export const MODULE_NAMESPACE = 'Additional-Roll-Modifiers'
