@@ -1,8 +1,6 @@
 import { AdditionalModifiers, AdditionalModifiersResult } from "../types/DiceTerm"
 import { anyModifiersEnabled, modifierEnabled } from "./settings";
 
-Die.MODIFIERS
-
 export const registerModifiers = function(): void {
 	if (!anyModifiersEnabled()) {
 		return;
@@ -17,7 +15,9 @@ export const registerModifiers = function(): void {
 	Die.MODIFIERS = newModifiers;
 }
 
-function replace(this: Die, modifier: string) {
+export const replace = function (this: Die, modifier: string) {
+    // Should match rep(comparison <, <= > >=)(criteria),(replacement)
+    // e.g. rep=1,9
     const rgx = /(?:rep|REP)([<>=]+)?([0-9]+),([0-9]+)/;
     const match = modifier.match(rgx);
 
