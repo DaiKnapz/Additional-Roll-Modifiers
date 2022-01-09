@@ -6,9 +6,9 @@ export function registerSettings(): void {
 		type: Boolean,
     	default: true,
     	hint: "Modifier to replace rolls with a flat value when the result matches certain criteria. e.g. /r 10d4rep=1,9 rolls 10 d4s and replaces any 1s with a 9",
-    	name: "Relace roll",
-    	onChange: (value) => {
-			console.log(`Replace roll setting changed, new value${value}`)
+    	name: "Replace roll",
+    	onChange: (value: boolean) => {
+			console.log(`Replace roll setting changed, new value${value}`);
 		},
     	scope: "world",
 	};
