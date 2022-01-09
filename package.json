@@ -34,13 +34,13 @@
 		"postinstall": "husky install"
 	},
 	"dependencies": {
-		"@league-of-foundry-developers/foundry-vtt-types": "fvtt-0.8.8",
 		"gulp": "^4.0.2",
 		"lib-wrapper": "^1.0.4",
 		"prettier": "^2.3.1",
 		"typescript": "^4.3.4"
 	},
 	"devDependencies": {
+		"@league-of-foundry-developers/foundry-vtt-types": "^9.238.1",
 		"@rollup/plugin-node-resolve": "^13.0.0",
 		"@types/jest": "^26.0.23",
 		"@typescript-eslint/eslint-plugin": "^4.28.0",
@@ -54,7 +54,7 @@
 		"gulp-dart-sass": "^1.0.2",
 		"husky": "^6.0.0",
 		"jest": "^27.0.5",
-		"jest-junit": "^12.2.0",
+		"jest-junit": "^13.0.0",
 		"lint-staged": "^11.0.0",
 		"rollup": "^2.52.2",
 		"rollup-plugin-typescript2": "^0.30.0",
