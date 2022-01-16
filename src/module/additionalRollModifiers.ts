@@ -18,7 +18,9 @@ Hooks.once('init', async () => {
 
 	registerSettings();
 
-	registerModifiers();
+	if (game instanceof Game) {
+		registerModifiers(Die.MODIFIERS, game);
+	}
 
 	libWrapper!.register(MODULE_NAMESPACE, 'DiceTerm.prototype.getResultCSS', function (wrapped: any, ...args: any[]) {
 		let result = wrapped(...args);

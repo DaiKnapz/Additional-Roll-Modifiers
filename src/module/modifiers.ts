@@ -1,18 +1,18 @@
 import { AdditionalModifiers, AdditionalModifiersResult } from "../types/DiceTerm"
-import { anyModifiersEnabled, modifierEnabled } from "./settings";
+import { anyModifiersEnabled, modifierEnabled, modifierType } from "./settings";
 
-export const registerModifiers = function (): void {
-    if (!anyModifiersEnabled()) {
+export const registerModifiers = function (modifiers: Die.Modifiers, foundryGame: Game): void {
+    if (!anyModifiersEnabled(foundryGame)) {
         return;
     }
 
-    let newModifiers: AdditionalModifiers = Die.MODIFIERS;
+    let newModifiers: AdditionalModifiers = modifiers;
 
-    if (modifierEnabled("ReplaceRoll")) {
+    if (modifierEnabled(modifierType.ReplaceRoll, foundryGame)) {
         newModifiers.rep = replace;
     }
 
-    Die.MODIFIERS = newModifiers;
+    modifiers = newModifiers;
 }
 
 export function replaceFunction(
@@ -44,7 +44,7 @@ export function replaceFunction(
     }
 }
 
-const replace = function (this: Die, modifier: string) {
+export const replace = function (this: Die, modifier: string) {
     return replaceFunction(this.results, modifier, DiceTerm.compareResult)
 };
 

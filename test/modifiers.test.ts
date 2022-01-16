@@ -1,5 +1,6 @@
-import { AdditionalModifiers, AdditionalModifiersResult } from "../src/types/DiceTerm";
-import { replaceFunction } from "../src/module/modifiers";
+import { AdditionalModifiersResult } from "../src/types/DiceTerm";
+import { registerModifiers, replace, replaceFunction } from "../src/module/modifiers";
+import { MODULE_NAMESPACE } from "../src/types/Constants";
 
 describe("Modifiers", () => {
 	describe("Replace", () => {
@@ -96,5 +97,55 @@ describe("Modifiers", () => {
 			expect(results[0].replaced).toBeFalsy();
 			expect(results[0].result).toBe(4);
 		});
+	})
+
+	describe("Register Modules", () => {
+		let mockDie: any;
+		let mockGame = {
+			settings: {
+				get: jest.fn(),
+				set: jest.fn(), 
+			}
+		}
+
+		beforeEach(() => {
+			mockDie = {
+				r: "reroll"
+			}
+		})
+
+		it("No modifiers enabled", () => {
+			// Arrange
+			mockGame.settings.get.mockReturnValue(false);
+
+			// Act
+			registerModifiers(mockDie, mockGame);
+
+			// Assert
+			expect(mockDie).toEqual({
+				r: "reroll"
+			});
+		})
+
+		it("Replace modifier enabled", () => {
+			// Arrange
+			mockGame.settings.get.mockImplementation(
+				(module: string, settingName: string) =>{
+					if (module == MODULE_NAMESPACE && settingName == "ReplaceRoll") {
+						return true;
+					}
+					return false;
+				}
+			)
+
+			// Act
+			registerModifiers(mockDie, mockGame);
+
+			// Assert
+			expect(mockDie).toEqual({
+				r: "reroll",
+				rep: replace
+			});
+		})
 	})
 });
