@@ -1,8 +1,4 @@
-import { MODULE_NAMESPACE } from "../types/Constants";
-
-export const enum modifierType {
-	ReplaceRoll = "ReplaceRoll"
-}
+import { modifierType, MODULE_NAMESPACE } from "../types/Constants";
 
 /**
  * Registers settings for each modifier at startup

@@ -1,5 +1,6 @@
+import { modifierType } from "../types/Constants";
 import { AdditionalModifiers, AdditionalModifiersResult } from "../types/DiceTerm"
-import { anyModifiersEnabled, modifierEnabled, modifierType } from "./settings";
+import { anyModifiersEnabled, modifierEnabled } from "./settings";
 
 /**
  * Registers all the modifiers that are enabled in the settings
