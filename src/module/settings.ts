@@ -4,6 +4,9 @@ export const enum modifierType {
 	ReplaceRoll = "ReplaceRoll"
 }
 
+/**
+ * Registers settings for each modifier at startup
+ */
 export function registerSettings(): void {
 	const replaceRollSetting: ClientSettings.PartialSetting<boolean> = {
     	config: true,
@@ -22,10 +25,21 @@ export function registerSettings(): void {
 	}
 }
 
+/**
+ * Gets if the specified modifier is enabled or disabled
+ * @param modifier The modifier to check is enabled
+ * @param foundryGame The game object
+ * @returns The value of the modifier setting
+ */
 export function modifierEnabled(modifier: modifierType, foundryGame: Game): boolean {
 	return foundryGame.settings.get(MODULE_NAMESPACE, modifier) as boolean;
 }
 
+/**
+ * Checks if any of our modifiers are enabled
+ * @param foundryGame The game object
+ * @returns True if any modifier is enabled, false otherwise
+ */
 export function anyModifiersEnabled(foundryGame: Game): boolean {
 	if (foundryGame.settings.get(MODULE_NAMESPACE, modifierType.ReplaceRoll) as boolean) {
 		return true;
