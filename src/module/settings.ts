@@ -1,24 +1,28 @@
-import { modifierType, MODULE_NAMESPACE } from "../types/Constants";
+import { modifierType, MODULE_NAMESPACE } from '../types/Constants';
 
 /**
  * Registers settings for each modifier at startup
  */
 export function registerSettings(): void {
+	if (!(game instanceof Game)) {
+		return;
+	}
+
 	const replaceRollSetting: ClientSettings.PartialSetting<boolean> = {
-    	config: true,
+		config: true,
 		type: Boolean,
-    	default: true,
-    	hint: "Modifier to replace rolls with a flat value when the result matches certain criteria. e.g. /r 10d4rep=1,9 rolls 10 d4s and replaces any 1s with a 9",
-    	name: "Replace roll",
-    	onChange: (value: boolean) => {
-			console.log(`Replace Roll setting changed, new value ${value}`)
+		default: true,
+		hint: game.i18n.localize('Additional-Roll-Modifiers.ReplaceRollHint'),
+		name: game.i18n.localize('Additional-Roll-Modifiers.ReplaceRollName'),
+		onChange: (value: boolean) => {
+			console.log(
+				`${(game as Game).i18n.localize('Additional-Roll-Modifiers.ReplaceRollSettingModified')} ${value}`,
+			);
 		},
-    	scope: "world",
+		scope: 'world',
 	};
 
-	if (game instanceof Game){
-		game.settings.register(MODULE_NAMESPACE, modifierType.ReplaceRoll, replaceRollSetting);
-	}
+	game.settings.register(MODULE_NAMESPACE, modifierType.ReplaceRoll, replaceRollSetting);
 }
 
 /**
@@ -39,6 +43,6 @@ export function modifierEnabled(modifier: modifierType, foundryGame: Game): bool
 export function anyModifiersEnabled(foundryGame: Game): boolean {
 	if (foundryGame.settings.get(MODULE_NAMESPACE, modifierType.ReplaceRoll) as boolean) {
 		return true;
-	};
+	}
 	return false;
 }
