@@ -1,0 +1,5 @@
+{
+	"Additional-Roll-Modifiers.ReplaceRollName": "Replace roll",
+	"Additional-Roll-Modifiers.ReplaceRollHint": "Modifier to replace rolls with a flat value when the result matches certain criteria. e.g. /r 10d4rep=1,9 rolls 10 d4s and replaces any 1s with a 9",
+	"Additional-Roll-Modifiers.ReplaceRollSettingModified": "Replace Roll setting changed, new value"
+}
