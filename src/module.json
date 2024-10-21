@@ -12,6 +12,11 @@
 	],
 	"minimumCoreVersion": "0.8.0",
 	"compatibleCoreVersion": "9",
+	"compatibility": {
+		"minimum": "0.8.0",
+		"verified": "9",
+		"maximum": "10"
+	},
 	"scripts": [],
 	"esmodules": ["module/additionalRollModifiers.js"],
 	"styles": ["styles/Additional-Roll-Modifiers.css"],
