@@ -16,7 +16,7 @@
 	"compatibility": {
 		"minimum": "0.8.0",
 		"verified": "9",
-		"maximum": "10"
+		"maximum": "12"
 	},
 	"scripts": [],
 	"esmodules": ["module/additionalRollModifiers.js"],
