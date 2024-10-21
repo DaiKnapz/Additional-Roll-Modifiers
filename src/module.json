@@ -1,5 +1,6 @@
 {
 	"id": "Additional-Roll-Modifiers",
+	"name": "Additional-Roll-Modifiers",
 	"title": "Additional Roll Modifiers",
 	"description": "Adds additional roll modifiers for Foundry VTT",
 	"version": "0.0.1",
